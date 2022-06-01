@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>badlayout</title>
+    <style type="text/css">
+      /* Sunset colors
+    White-ish - #F2F1E4
+    Yellow - #F2B33D
+    Orange - #D96704
+    Brown - #260101
+    */
+      /* Get rid of default body margins */
+      body {
+        margin: 0;
+        padding: 0;
+        /* Just for testing */
+        font-size: 150%;
+      }
+      /* Make HTML5 layout elements block elements for older browsers */
+      header,
+      nav,
+      aside,
+      article,
+      footer,
+      section {
+        display: block;
+      }
+      /* Make header and nav sections fixed elements */
+      header {
+        background: #f2b33d;
+        color: #260101;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 900px;
+        height: 100px;
+        margin: 0 auto;
+      }
+      nav {
+        background: #d96704;
+        color: #260101;
+        position: fixed;
+        top: 100px;
+        left: 0;
+        width: 900px;
+        height: 50px;
+        margin: 0 auto;
+      }
+      /* Content div is for side column and main article */
+      #content {
+        background: #f2f1e4;
+        width: 900px;
+        margin: 0 auto;
+      }
+      aside {
+        background: #260101;
+        color: #f2f1e4;
+        width: 130px;
+        padding: 10px;
+        border-right: solid 1px #260101;
+        display: table-cell;
+        min-height: 1000px;
+      }
+      article {
+        padding: 10px;
+        display: table-cell;
+      }
+      /* footer is fixed to bottom of the viewport */
+      footer {
+        background: #f2b33d;
+        color: #260101;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 900px;
+        height: 50px;
+        margin: 0 auto;
+      }
+      /* Weirdly-tall paragraphs just for testing */
+      p.test {
+        margin-bottom: 5em;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      //Make older browsers aware of new HTML5 layout tags
+      "header nav aside article footer section".replace(/\w+/g, function (n) {
+        document.createElement(n);
+      });
+    </script>
+    <header>header</header>
+    <nav>nav</nav>
+    <div id="content">
+      <aside>aside</aside>
+      <article>
+        <p class="test">Paragraph 1</p>
+        <p class="test">Paragraph 2</p>
+        <p class="test">Paragraph 3</p>
+        <p class="test">Paragraph 4</p>
+        <p class="test">Paragraph 5</p>
+        <p class="test">Paragraph 6</p>
+        <p class="test">Paragraph 7</p>
+        <p class="test">Paragraph 8</p>
+        <p class="test">Paragraph 9</p>
+        <p class="test">Paragraph 10</p>
+        <p>End of article</p>
+      </article>
+    </div>
+    <footer>footer</footer>
+  </body>
+</html>
